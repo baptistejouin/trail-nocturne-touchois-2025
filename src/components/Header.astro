@@ -1,0 +1,44 @@
+---
+import background from "../assets/header-background.png";
+import PlayButtonSvg from "../assets/play-button.svg";
+import LogoSvg from "../assets/tnt.svg";
+import AnchorButton from "./AnchorButton.astro";
+---
+
+<header class="py-12 relative text-white">
+  <div class="px-6 max-w-screen-lg mx-auto">
+    <nav class="uppercase flex justify-between items-center">
+      <LogoSvg />
+      <ul class="flex gap-12 font-medium text-base">
+        <li><a href="#">Participer</a></li>
+        <li><a href="#">Photos</a></li>
+        <li><a href="#">Résultats 2024</a></li>
+      </ul>
+    </nav>
+    <div class="flex flex-col my-24 gap-12 text-center">
+      <h1 class="font-bold text-7xl">Trail Nocturne<br />Touchois</h1>
+      <p class="font-normal max-w-screen-md mx-auto">
+        Venez défier les sentiers touchois de nuit ce 30 novembre 2024&nbsp;!
+        Une course nature de 12km ou 24km dans une ambiance unique, avec plus de
+        1000 participants attendus. Ouverture des inscriptions le 20 juin 2024.
+      </p>
+      <div class="flex gap-6 items-center justify-center mx-auto">
+        <AnchorButton class="bg-white text-black" size="medium" href="#"
+          >Je m'inscrit</AnchorButton
+        >
+        <button
+          class="px-6 py-3 text-base font-bold uppercase flex gap-2 items-center"
+        >
+          <PlayButtonSvg />
+          <span>Voir la vidéo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <img
+    src={background.src}
+    alt="Photo prise lors du Trail Nocturne Touchois"
+    class="bg-black absolute inset-0 object-cover size-full -z-10"
+    fetchpriority="high"
+  />
+</header>

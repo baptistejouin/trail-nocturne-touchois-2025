@@ -1,0 +1,18 @@
+---
+interface Props {
+  size: "small" | "medium";
+  href: string;
+  class?: string;
+}
+
+const { size, class: className, href } = Astro.props;
+
+const sizeClasses = {
+  small: "px-4 py-2 text-sm",
+  medium: "px-6 py-3 text-base",
+};
+---
+
+<a class:list={[sizeClasses[size], "h-min rounded-full font-bold uppercase",className]} href={href}>
+  <slot />
+</a>
