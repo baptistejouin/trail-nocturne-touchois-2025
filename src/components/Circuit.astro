@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import CalendarIcon from "../assets/icons/calendar.svg";
+import GpxIcon from "../assets/icons/gpx.svg";
 import GraphIcon from "../assets/icons/graph.svg";
 import PinsIcon from "../assets/icons/pins.svg";
 import RunnerIcon from "../assets/icons/runner.svg";
-import GpxIcon from "../assets/icons/gpx.svg";
 import mapImage from "../assets/map.png";
 import AnchorButton from "./AnchorButton.astro";
 ---
@@ -13,12 +13,15 @@ import AnchorButton from "./AnchorButton.astro";
   <div class="px-6 max-w-screen-lg mx-auto">
     <h2 class="font-bold text-6xl uppercase mb-6">Le tracé</h2>
     <div class="relative">
-      <button
-        class="w-fit px-4 py-2 text-sm font-bold uppercase flex gap-2 items-center top-4 right-4 absolute bg-white text-black rounded-full border-neutral-100 border-2 cursor-pointer"
+      <!-- todo: fix download gpx  -->
+      <AnchorButton
+        class="bg-white text-black flex gap-2 top-4 right-4 absolute border-neutral-100 border-2"
+        size="small"
+        download="/favicon.svg"
       >
-		<GpxIcon class="w-4 h-4" />
+        <GpxIcon class="w-4 h-4" />
         <span>Télécharger</span>
-      </button>
+      </AnchorButton>
       <Image
         src={mapImage}
         alt="Circuit du Trail Nocturne Touchois"
@@ -43,9 +46,15 @@ import AnchorButton from "./AnchorButton.astro";
         <h3 class="font-bold text-lg">130 mD+</h3>
       </div>
     </div>
-	<div class="flex gap-6">
-		<AnchorButton class="bg-black text-white w-fit" size="medium" href="#">Découvrir les offres</AnchorButton>
-		<AnchorButton class="bg-neutral-100 text-black w-fit" size="medium" href="#">Règlement de l'épreuve</AnchorButton>
-	</div>
+    <div class="flex gap-6">
+      <AnchorButton class="bg-black text-white w-fit" size="medium" href="#"
+        >Découvrir les offres</AnchorButton
+      >
+      <AnchorButton
+        class="bg-neutral-100 text-black w-fit"
+        size="medium"
+        href="#">Règlement de l'épreuve</AnchorButton
+      >
+    </div>
   </div>
 </div>

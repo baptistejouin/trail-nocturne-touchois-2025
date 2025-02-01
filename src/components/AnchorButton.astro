@@ -1,11 +1,22 @@
 ---
-interface Props {
+interface BaseProps {
   size: "small" | "medium";
-  href: string;
   class?: string;
 }
 
-const { size, class: className, href } = Astro.props;
+interface LinkProps extends BaseProps {
+  href: string;
+  download?: never;
+}
+
+interface DownloadProps extends BaseProps {
+  download: string;
+  href?: never;
+}
+
+type Props = LinkProps | DownloadProps;
+
+const { size, class: className, href, download } = Astro.props;
 
 const sizeClasses = {
   small: "px-4 py-2 text-sm",
@@ -13,6 +24,14 @@ const sizeClasses = {
 };
 ---
 
-<a class:list={[sizeClasses[size], "h-min rounded-full font-bold uppercase",className]} href={href}>
+<a
+  class:list={[
+    sizeClasses[size],
+    "h-min rounded-full font-bold uppercase cursor-pointer",
+    className,
+  ]}
+  href={href}
+  download={download}
+>
   <slot />
 </a>
