@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@source './src/**/*.{astro}';
+
+@theme {
+  --font-sans: "Syne", "sans-serif";
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 5px var(--color-black);
+    paint-order: stroke fill;
+  }
+}
