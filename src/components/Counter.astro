@@ -1,0 +1,120 @@
+---
+const TARGET_DATE = new Date("Nov 30, 2025 19:30:00").getTime();
+---
+
+<div class="bg-neutral-100 py-8 my-12">
+  <h2 class="invisible w-[1px] h-[1px]">
+    Décompte avant le départ du Trail Nocturne Touchois
+  </h2>
+  <div
+    id="countdown"
+    class="text-6xl font-extrabold justify-center tabular-nums tracking-wide text-neutral-100 flex text-stroke align-middle gap-12"
+    data-target={TARGET_DATE}
+    aria-live="polite"
+  >
+    <div aria-label="jours">
+      <span class="inline-block min-w-[2ch] text-center" id="days">00</span><span>j</span>
+    </div>
+    <div aria-label="heures">
+      <span class="inline-block min-w-[2ch] text-center" id="hours">00</span><span>h</span>
+    </div>
+    <div aria-label="minutes">
+      <span class="inline-block min-w-[2ch] text-center" id="minutes">00</span><span>m</span>
+    </div>
+    <div aria-label="secondes">
+      <span class="inline-block min-w-[2ch] text-center" id="seconds">00</span><span>s</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const TIME_CONSTANTS = {
+    DAY: 1000 * 60 * 60 * 24,
+    HOUR: 1000 * 60 * 60,
+    MINUTE: 1000 * 60,
+    SECOND: 1000,
+  } as const;
+
+  class CountdownTimer {
+    private readonly elements: Record<string, HTMLElement>;
+    private readonly targetDate: number;
+    private timerId: number | null = null;
+    private lastValues: Record<string, number> = {
+      days: -1,
+      hours: -1,
+      minutes: -1,
+      seconds: -1,
+    };
+
+    constructor(targetDate: number) {
+      this.targetDate = targetDate;
+      this.elements = this.initializeElements();
+      this.start();
+    }
+
+    private initializeElements(): Record<string, HTMLElement> {
+      return {
+        days: document.getElementById("days")!,
+        hours: document.getElementById("hours")!,
+        minutes: document.getElementById("minutes")!,
+        seconds: document.getElementById("seconds")!,
+      };
+    }
+
+    private start(): void {
+      this.update();
+      this.timerId = setInterval(() => this.update(), 1000);
+    }
+
+    private static padNumber(num: number): string {
+      return num.toString().padStart(2, "0");
+    }
+
+    private calculateTimeUnits(distance: number): Record<string, number> {
+      return {
+        days: Math.floor(distance / TIME_CONSTANTS.DAY),
+        hours: Math.floor(
+          (distance % TIME_CONSTANTS.DAY) / TIME_CONSTANTS.HOUR
+        ),
+        minutes: Math.floor(
+          (distance % TIME_CONSTANTS.HOUR) / TIME_CONSTANTS.MINUTE
+        ),
+        seconds: Math.floor(
+          (distance % TIME_CONSTANTS.MINUTE) / TIME_CONSTANTS.SECOND
+        ),
+      };
+    }
+
+    private update(): void {
+      const now = Date.now();
+      const distance = this.targetDate - now;
+
+      if (distance < 0) {
+        if (this.timerId) {
+          clearInterval(this.timerId);
+          this.timerId = null;
+        }
+        this.updateDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const timeUnits = this.calculateTimeUnits(distance);
+      this.updateDisplay(timeUnits);
+    }
+
+    private updateDisplay(timeUnits: Record<string, number>): void {
+      Object.entries(timeUnits).forEach(([unit, value]) => {
+        if (this.lastValues[unit] !== value) {
+          this.elements[unit].textContent = CountdownTimer.padNumber(value);
+          this.lastValues[unit] = value;
+        }
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const countdownElement = document.querySelector<HTMLElement>("#countdown")!;
+    const targetDate = Number(countdownElement.dataset.target);
+    new CountdownTimer(targetDate);
+  });
+</script>
