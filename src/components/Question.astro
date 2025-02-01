@@ -1,0 +1,23 @@
+---
+import ChevronDownIcon from "../assets/icons/chevron-down.svg";
+interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<details class="bg-neutral-100 my-2 group">
+  <summary
+    class="p-6 flex justify-between items-center cursor-pointer w-full transition-discrete"
+  >
+    <h3 class="font-bold text-lg">{question}</h3>
+    <ChevronDownIcon
+      class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180"
+    />
+  </summary>
+  <div class="text-neutral-600 px-6 pb-6">
+    <p>{answer}</p>
+  </div>
+</details>

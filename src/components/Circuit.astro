@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import CalendarIcon from "../assets/icons/calendar.svg";
+import GraphIcon from "../assets/icons/graph.svg";
+import PinsIcon from "../assets/icons/pins.svg";
+import RunnerIcon from "../assets/icons/runner.svg";
+import GpxIcon from "../assets/icons/gpx.svg";
+import mapImage from "../assets/map.png";
+import AnchorButton from "./AnchorButton.astro";
+---
+
+<div class="@container my-18">
+  <div class="px-6 max-w-screen-lg mx-auto">
+    <h2 class="font-bold text-6xl uppercase mb-6">Le tracé</h2>
+    <div class="relative">
+      <button
+        class="w-fit px-4 py-2 text-sm font-bold uppercase flex gap-2 items-center top-4 right-4 absolute bg-white text-black rounded-full border-neutral-100 border-2 cursor-pointer"
+      >
+		<GpxIcon class="w-4 h-4" />
+        <span>Télécharger</span>
+      </button>
+      <Image
+        src={mapImage}
+        alt="Circuit du Trail Nocturne Touchois"
+        class="w-full max-h-[425px] object-cover rounded-xl border-neutral-100 border-2"
+      />
+    </div>
+    <div class="grid grid-cols-2 my-6">
+      <div class="flex">
+        <CalendarIcon class="w-6 h-6 inline-block mr-2" />
+        <h3 class="font-bold text-lg">samedi 12 avril 2025 à 08h00</h3>
+      </div>
+      <div class="flex">
+        <RunnerIcon class="w-6 h-6 inline-block mr-2" />
+        <h3 class="font-bold text-lg">1000+ participants en 2024</h3>
+      </div>
+      <div class="flex">
+        <PinsIcon class="w-6 h-6 inline-block mr-2" />
+        <h3 class="font-bold text-lg">une boucle de 12km</h3>
+      </div>
+      <div class="flex">
+        <GraphIcon class="w-6 h-6 inline-block mr-2" />
+        <h3 class="font-bold text-lg">130 mD+</h3>
+      </div>
+    </div>
+	<div class="flex gap-6">
+		<AnchorButton class="bg-black text-white w-fit" size="medium" href="#">Découvrir les offres</AnchorButton>
+		<AnchorButton class="bg-neutral-100 text-black w-fit" size="medium" href="#">Règlement de l'épreuve</AnchorButton>
+	</div>
+  </div>
+</div>

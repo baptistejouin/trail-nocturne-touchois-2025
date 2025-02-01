@@ -8,20 +8,20 @@ const TARGET_DATE = new Date("Nov 30, 2025 19:30:00").getTime();
   </h2>
   <div
     id="countdown"
-    class="text-6xl font-extrabold justify-center tabular-nums tracking-wide text-neutral-100 flex text-stroke align-middle gap-12"
+    class="text-5xl lg:text-6xl font-extrabold justify-center tabular-nums tracking-wide text-neutral-100 flex text-stroke align-middle gap-12"
     data-target={TARGET_DATE}
     aria-live="polite"
   >
     <div aria-label="jours">
       <span class="inline-block min-w-[2ch] text-center" id="days">00</span><span>j</span>
     </div>
-    <div aria-label="heures">
+    <div aria-label="heures" class="hidden md:block">
       <span class="inline-block min-w-[2ch] text-center" id="hours">00</span><span>h</span>
     </div>
-    <div aria-label="minutes">
+    <div aria-label="minutes" class="hidden sm:block">
       <span class="inline-block min-w-[2ch] text-center" id="minutes">00</span><span>m</span>
     </div>
-    <div aria-label="secondes">
+    <div aria-label="secondes" class="hidden lg:block">
       <span class="inline-block min-w-[2ch] text-center" id="seconds">00</span><span>s</span>
     </div>
   </div>

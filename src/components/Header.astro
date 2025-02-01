@@ -1,14 +1,14 @@
 ---
-import background from "../assets/header-background.png";
-import PlayButtonSvg from "../assets/play-button.svg";
-import LogoSvg from "../assets/tnt.svg";
+import backgroundImage from "../assets/header-background.png";
+import PlayButtonIcon from "../assets/icons/play-button.svg";
+import LogoIcon from "../assets/icons/tnt.svg";
 import AnchorButton from "./AnchorButton.astro";
 ---
 
 <header class="py-12 relative text-white @container">
   <div class="px-6 max-w-screen-lg mx-auto">
     <nav class="uppercase justify-between items-center flex">
-      <LogoSvg class="hidden @lg:block" />
+      <LogoIcon class="hidden @lg:block" />
       <ul class="flex gap-6 font-medium text-base @xl:gap-12">
         <li><a href="#">Participer</a></li>
         <li><a href="#">Photos</a></li>
@@ -31,16 +31,16 @@ import AnchorButton from "./AnchorButton.astro";
           >Je m'inscrit</AnchorButton
         >
         <button
-          class="w-fit px-6 py-3 text-base font-bold uppercase flex gap-2 items-center"
+          class="w-fit px-6 py-3 text-base font-bold uppercase flex gap-2 items-center cursor-pointer"
         >
-          <PlayButtonSvg />
+          <PlayButtonIcon />
           <span>Voir la vidéo</span>
         </button>
       </div>
     </div>
   </div>
   <img
-    src={background.src}
+    src={backgroundImage.src}
     alt="Photo prise lors du Trail Nocturne Touchois"
     class="bg-black absolute inset-0 object-cover size-full -z-10"
     fetchpriority="high"
