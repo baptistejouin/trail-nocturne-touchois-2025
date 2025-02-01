@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import Image01 from "../assets/imgs/gallery/01.jpg";
+---
+
+<div class="my-18">
+  <div class="px-6 max-w-screen-lg mx-auto">
+    <h2 class="font-bold text-4xl sm:text-6xl uppercase mb-6">Photos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+    </div>
+  </div>
+  <dialog id="imageDialog" class="backdrop:bg-black/90 bg-transparent">
+    <form method="dialog" class="fixed inset-0 block">
+      <div class="relative flex justify-center items-center h-screen">
+        <button class="absolute right-8 top-4 text-white text-4xl"
+          >&times;</button
+        >
+        <img id="dialogImage" src="" alt="" class="max-h-[90vh] w-auto" />
+      </div>
+    </form>
+  </dialog>
+</div>
+
+<script>
+  const images = document.querySelectorAll(
+    "img"
+  ) as NodeListOf<HTMLImageElement>;
+  const dialog = document.getElementById("imageDialog") as HTMLDialogElement;
+  const dialogImage = document.getElementById(
+    "dialogImage"
+  ) as HTMLImageElement;
+
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      dialogImage.src = image.src;
+	  dialogImage.alt = image.alt;
+      dialog.showModal();
+    });
+  });
+
+  dialog.addEventListener("click", () => {
+    dialog.close();
+  });
+</script>
