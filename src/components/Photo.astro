@@ -1,24 +1,35 @@
 ---
 import { Image } from "astro:assets";
 import Image01 from "../assets/imgs/gallery/01.jpg";
+
+const images = [
+  Image01,
+  Image01,
+  Image01,
+  Image01,
+  Image01,
+  Image01,
+  Image01,
+  Image01,
+  Image01,
+];
 ---
 
 <div class="my-18">
-  <div class="px-6 max-w-screen-lg mx-auto">
+  <div class="px-6 max-w-screen-xl mx-auto">
     <h2 class="font-bold text-4xl sm:text-6xl uppercase mb-6">Photos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
-      <Image src={Image01} alt="Photo du trail nocturne touchois" class="" />
+      {
+        images.map((image, index) => (
+          <div class="cursor-pointer group overflow-hidden">
+            <Image
+              src={image}
+              alt="Photo du trail nocturne touchois"
+              class="group-hover:scale-105 transition-transform duration-500 ease-in-out"
+            />
+          </div>
+        ))
+      }
     </div>
   </div>
   <dialog id="imageDialog" class="backdrop:bg-black/90 bg-transparent">
@@ -45,7 +56,7 @@ import Image01 from "../assets/imgs/gallery/01.jpg";
   images.forEach((image) => {
     image.addEventListener("click", () => {
       dialogImage.src = image.src;
-	  dialogImage.alt = image.alt;
+      dialogImage.alt = image.alt;
       dialog.showModal();
     });
   });

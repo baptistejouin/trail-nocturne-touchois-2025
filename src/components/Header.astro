@@ -1,12 +1,12 @@
 ---
-import backgroundImage from "../assets/header-background.png";
+import backgroundImage from "../assets/imgs/header-background.png";
 import PlayButtonIcon from "../assets/icons/play-button.svg";
 import LogoIcon from "../assets/icons/tnt.svg";
 import AnchorButton from "./AnchorButton.astro";
 ---
 
 <header class="py-12 relative text-white @container">
-  <div class="px-6 max-w-screen-lg mx-auto">
+  <div class="px-6 max-w-screen-xl mx-auto">
     <nav class="uppercase justify-between items-center flex">
       <LogoIcon class="hidden @lg:block" />
       <ul class="flex gap-6 font-medium text-base @xl:gap-12">
@@ -27,11 +27,13 @@ import AnchorButton from "./AnchorButton.astro";
       <div
         class="flex flex-col gap-3 @lg:flex-row @lg:justify-center @lg:gap-6 @lg:items-center"
       >
-        <AnchorButton class="bg-white text-black w-fit" size="medium" href="#"
-          >Je m'inscrit</AnchorButton
+        <AnchorButton
+          class="bg-white text-black text-center hover:bg-neutral-100 transition-colors duration-300 ease-in-out"
+          size="medium"
+          href="#">Je m'inscrit</AnchorButton
         >
         <button
-          class="w-fit px-6 py-3 text-base font-bold uppercase flex gap-2 items-center cursor-pointer"
+          class="justify-center px-6 py-3 text-base font-bold text-center uppercase flex gap-2 items-center cursor-pointer"
         >
           <PlayButtonIcon />
           <span>Voir la vidéo</span>
