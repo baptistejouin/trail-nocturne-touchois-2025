@@ -12,3 +12,8 @@
     paint-order: stroke fill;
   }
 }
+
+/* custom css */
+details > summary::-webkit-details-marker {
+  display: none;
+}
