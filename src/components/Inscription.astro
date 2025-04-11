@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import twelveImage from "../assets/imgs/twelve.png";
 import twentyFourImage from "../assets/imgs/twenty-four.png";
+import content from "../data/content.json";
 import AnchorButton from "./AnchorButton.astro";
 ---
 
@@ -14,8 +15,14 @@ import AnchorButton from "./AnchorButton.astro";
           class="py-24 flex flex-col justify-center items-center relative z-10"
         >
           <h3 class="font-bold text-5xl text-white">12km</h3>
-          <p class="mt-1 text-white">Départ 19h30</p>
-          <AnchorButton class="bg-white text-black mt-6" size="medium" href="#">
+          <p class="mt-1 text-white">
+            {content["inscription__start_date-12km"]}
+          </p>
+          <AnchorButton
+            class="bg-white text-black mt-6"
+            size="medium"
+            href={content.inscription_link}
+          >
             Je m'inscris
           </AnchorButton>
         </div>
@@ -28,9 +35,13 @@ import AnchorButton from "./AnchorButton.astro";
       <div class="relative group overflow-hidden">
         <div class="py-24 flex flex-col justify-center items-center">
           <h3 class="font-bold text-5xl text-white">24km</h3>
-          <p class="mt-1 text-white">Départ à 19h00</p>
-          <AnchorButton class="bg-white text-black mt-6" size="medium" href="#"
-            >Je m'inscrit</AnchorButton
+          <p class="mt-1 text-white">
+            {content["inscription__start_date-24km"]}
+          </p>
+          <AnchorButton
+            class="bg-white text-black mt-6"
+            size="medium"
+            href={content.inscription_link}>Je m'inscrit</AnchorButton
           >
         </div>
         <Image

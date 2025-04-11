@@ -6,6 +6,7 @@ import GraphIcon from "../assets/icons/graph.svg";
 import PinsIcon from "../assets/icons/pins.svg";
 import RunnerIcon from "../assets/icons/runner.svg";
 import mapImage from "../assets/imgs/map.png";
+import content from "../data/content.json";
 import AnchorButton from "./AnchorButton.astro";
 ---
 
@@ -32,11 +33,11 @@ import AnchorButton from "./AnchorButton.astro";
     >
       <div class="flex">
         <CalendarIcon class="size-6 inline-block mr-2" />
-        <h3 class="font-bold text-lg">samedi 12 avril 2025 à 08h00</h3>
+        <h3 class="font-bold text-lg">{content.circuit__date}</h3>
       </div>
       <div class="flex">
         <RunnerIcon class="size-6 inline-block mr-2" />
-        <h3 class="font-bold text-lg">1000+ participants en 2024</h3>
+        <h3 class="font-bold text-lg">{content.circuit__participant_count}</h3>
       </div>
       <div class="flex">
         <PinsIcon class="size-6 inline-block mr-2" />
@@ -51,7 +52,7 @@ import AnchorButton from "./AnchorButton.astro";
       <AnchorButton
         class="bg-black text-white text-center"
         size="medium"
-        href="#">Découvrir les offres</AnchorButton
+        href={content.inscription_link}>Découvrir les offres</AnchorButton
       >
       <AnchorButton
         class="bg-neutral-100 text-black text-center"

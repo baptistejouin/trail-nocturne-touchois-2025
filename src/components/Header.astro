@@ -1,7 +1,8 @@
 ---
-import backgroundImage from "../assets/imgs/header-background.png";
 import PlayButtonIcon from "../assets/icons/play-button.svg";
 import LogoIcon from "../assets/icons/tnt.svg";
+import backgroundImage from "../assets/imgs/header-background.png";
+import content from "../data/content.json";
 import AnchorButton from "./AnchorButton.astro";
 ---
 
@@ -10,32 +11,29 @@ import AnchorButton from "./AnchorButton.astro";
     <nav class="uppercase justify-between items-center flex">
       <LogoIcon class="hidden @lg:block" />
       <ul class="flex gap-6 font-medium text-base @xl:gap-12 flex-wrap">
-        <li><a href="#">Participer</a></li>
+        <li><a href={content.inscription_link}>Participer</a></li>
         <li><a href="#photos">Photos</a></li>
-        <li><a href="#">Résultats</a></li>
+        <li><a href={content.header__result_link}>Résultats</a></li>
       </ul>
     </nav>
     <div class="flex flex-col my-24 gap-12 text-left @lg:text-center">
       <h1 class="font-bold text-5xl md:text-7xl">
         Trail <br class="block @lg:hidden" />Nocturne<br />Touchois
       </h1>
-      <p class="font-normal max-w-screen-md mx-auto">
-        Venez défier les sentiers touchois de nuit ce 30 novembre 2024&nbsp;!
-        Une course nature de 12km ou 24km dans une ambiance unique, avec plus de
-        1000 participants attendus. Ouverture des inscriptions le 20 juin 2024.
-      </p>
+      <p class="font-normal max-w-screen-md mx-auto">{content.header__text}</p>
       <div
         class="flex flex-col gap-3 @lg:flex-row @lg:justify-center @lg:gap-6 @lg:items-center"
       >
         <AnchorButton
           class="bg-white text-black text-center hover:bg-neutral-100 transition-colors duration-300 ease-in-out"
           size="medium"
-          href="#">Je m'inscrit</AnchorButton
+          href={content.inscription_link}>Je m'inscrit</AnchorButton
         >
         <button
           class="justify-center px-6 py-3 text-base font-bold text-center uppercase flex gap-2 items-center cursor-pointer"
         >
           <PlayButtonIcon />
+          <!-- todo -->
           <span>Voir la vidéo</span>
         </button>
       </div>

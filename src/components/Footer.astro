@@ -2,6 +2,7 @@
 import FacebookIcon from "../assets/icons/facebook.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
 import StravaIcon from "../assets/icons/strava.svg";
+import content from "../data/content.json";
 ---
 
 <div class="mt-12">
@@ -68,12 +69,14 @@ import StravaIcon from "../assets/icons/strava.svg";
           <h2 class="uppercase text-2xl mb-3 font-medium">Contact</h2>
           <ul class="space-y-1 text-neutral-300">
             <li>
-              <a href="mailto:contact@tnt-lestouches.fr"
-                >contact@tnt-lestouches.fr</a
+              <a href={`mailto:${content.footer__email}`}
+                >{content.footer__email}</a
               >
             </li>
             <li>
-              <a href="tel:+33640131802">+33 6 40 13 18 02</a>
+              <a href={`tel:${content.footer__phone.replaceAll(" ", "")}`}
+                >{content.footer__phone}</a
+              >
             </li>
           </ul>
         </div>

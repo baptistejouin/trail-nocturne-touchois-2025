@@ -6,20 +6,20 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Inscription from "../components/Inscription.astro";
 import Photo from "../components/Photo.astro";
+import content from "../data/content.json";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
-<!-- TODO: reactive description page and content -->
 <Layout
-  title="Trail Nocturne Touchois"
-  description="Le Trail Nocturne Touchois ou TNT se déroulera le 30 novembre 2024. Départ à 19h30 pour le 12km et 19h00 pour le 24km. Ouverture des inscriptions le 20 juin 2024 et clôture des inscriptions le 26 novembre 2024."
+  title={content.meta__page_title}
+  description={content.meta__page_description}
   currentPage="index"
 >
   <Header />
   <Counter />
   <Circuit />
-  <Inscription/>
+  <Inscription />
   <FAQ />
   <Photo />
   <Footer />

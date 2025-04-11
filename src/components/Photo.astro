@@ -1,18 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Image01 from "../assets/imgs/gallery/01.jpg";
-
-const images = [
-  Image01,
-  Image01,
-  Image01,
-  Image01,
-  Image01,
-  Image01,
-  Image01,
-  Image01,
-  Image01,
-];
+import content from "../data/content.json";
 ---
 
 <div class="my-18" id="photos">
@@ -20,11 +8,13 @@ const images = [
     <h2 class="font-bold text-4xl sm:text-6xl uppercase mb-6">Photos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
       {
-        images.map((image, index) => (
+        content.photos.map((image) => (
           <div class="cursor-pointer group overflow-hidden">
             <Image
-              src={image}
-              alt="Photo du trail nocturne touchois"
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
               class="group-hover:scale-105 transition-transform duration-500 ease-in-out"
             />
           </div>

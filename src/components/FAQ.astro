@@ -1,29 +1,15 @@
 ---
+import content from "../data/content.json";
 import Question from "./Question.astro";
 ---
 
 <div class="my-18">
   <div class="px-6 max-w-screen-xl mx-auto">
     <h2 class="font-bold text-4xl sm:text-6xl uppercase mb-6">FAQ</h2>
-    <Question
-      question="Où et quand puis-je récupérer mon dossard ?"
-      answer="Le retrait des dossards se fera le vendredi 29 novembre 2024 de 14h00 à 19h00 et le samedi 30 novembre 2024 de 08h00 à 12h00. Le lieu de retrait des dossards sera communiqué ultérieurement."
-    />
-    <Question
-      question="Où et quand a lieu le départ de la course ?"
-      answer="Le départ de la course se fera le samedi 30 novembre 2024 à 19h30 pour le 12km et à 19h00 pour le 24km. Le lieu de départ sera communiqué ultérieurement."
-    />
-    <Question
-      question="Est-il obligatoire de fournir un certificat médical ?"
-      answer="Oui, un certificat médical de non contre-indication à la pratique de la course à pied en compétition datant de moins d'un an à la date de la course est obligatoire."
-    />
-    <Question
-      question="Quel équipement dois-je prévoir ?"
-      answer="Pour le 12km et le 24km, une lampe frontale est obligatoire. Si vous le souhaitez, vous pouvez également prévoir un goblet réutilisable pour les ravitaillements."
-    />
-    <Question
-      question="Des ravitaillements sont-ils prévus ?"
-      answer="Oui, des ravitaillements sont prévus sur le parcours. Il sera placé à l'arrivée du 12km, et donc à mi-parcours du 24km."
-    />
+    {
+      content.faq.map((item) => (
+        <Question question={item.question} answer={item.answer} />
+      ))
+    }
   </div>
 </div>
