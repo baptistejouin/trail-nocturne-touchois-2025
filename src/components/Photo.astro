@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import content from "../data/content.json";
 ---
 
-<div class="my-18" id="photos">
+<div class={`my-18 ${content.photos.length === 0 && "hidden"}`} id="photos">
   <div class="px-6 max-w-screen-xl mx-auto">
     <h2 class="font-bold text-4xl sm:text-6xl uppercase mb-6">Photos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
