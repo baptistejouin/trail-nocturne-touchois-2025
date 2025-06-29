@@ -45,7 +45,7 @@ import AnchorButton from "./AnchorButton.astro";
       </div>
       <div class="flex">
         <GraphIcon class="size-6 inline-block mr-2" />
-        <h3 class="font-bold text-lg">130 mD+</h3>
+        <h3 class="font-bold text-lg">{content.circuit__elevation}</h3>
       </div>
     </div>
     <div class="flex gap-3 flex-col sm:flex-row">
@@ -57,7 +57,7 @@ import AnchorButton from "./AnchorButton.astro";
       <AnchorButton
         class="bg-neutral-100 text-black text-center"
         size="medium"
-        href="reglement.pdf">Règlement de l'épreuve</AnchorButton
+        href={content.circuit__reglement_link}>Règlement de l'épreuve</AnchorButton
       >
     </div>
   </div>

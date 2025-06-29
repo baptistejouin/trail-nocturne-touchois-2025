@@ -29,13 +29,13 @@ import AnchorButton from "./AnchorButton.astro";
           size="medium"
           href={content.inscription_link}>Je m'inscrit</AnchorButton
         >
-        <button
+        <a
           class="justify-center px-6 py-3 text-base font-bold text-center uppercase flex gap-2 items-center cursor-pointer"
+          href={content.header__video_link}
         >
           <PlayButtonIcon />
-          <!-- todo -->
           <span>Voir la vidéo</span>
-        </button>
+    </a>
       </div>
     </div>
   </div>

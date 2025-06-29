@@ -1,57 +1,39 @@
 {
-	"meta__page_title": "Trail Nocturne Touchois",
-	"meta__page_description": "Le Trail Nocturne Touchois ou TNT se déroulera le 30 novembre 2024. Départ à 19h30 pour le 12km et 19h00 pour le 24km. Ouverture des inscriptions le 20 juin 2024 et clôture des inscriptions le 26 novembre 2024.",
-	"inscription_link": "#",
-	"header__result_link": "#",
-	"header__text": "Venez défier les sentiers touchois de nuit ce 30 novembre 2024 ! Une course nature de 12km ou 24km dans une ambiance unique, avec plus de 1000 participants attendus. Ouverture des inscriptions le 20 juin 2024.",
-	"header__video_link": "#",
-	"countdown__date": "Nov 30, 2025 19:30:00",
-	"circuit__date": "samedi 12 avril 2025 à 08h00",
-	"circuit__participant_count": "samedi 12 avril 2025 à 08h00",
-	"inscription__start_date-12km": "Départ 19h30",
-	"inscription__start_date-24km": "Départ à 19h00",
-	"faq": [
-		{
-			"question": "Où et quand puis-je récupérer mon dossard ?",
-			"answer": "Le retrait des dossards se fera le vendredi 29 novembre 2024 de 14h00 à 19h00 et le samedi 30 novembre 2024 de 08h00 à 12h00. Le lieu de retrait des dossards sera communiqué ultérieurement."
-		},
-		{
-			"question": "Où et quand a lieu le départ de la course ?",
-			"answer": "Le départ de la course se fera le samedi 30 novembre 2024 à 19h30 pour le 12km et à 19h00 pour le 24km. Le lieu de départ sera communiqué ultérieurement."
-		},
-		{
-			"question": "Est-il obligatoire de fournir un certificat médical ?",
-			"answer": "Oui, un certificat médical de non contre-indication à la pratique de la course à pied en compétition datant de moins d'un an à la date de la course est obligatoire."
-		},
-		{
-			"question": "Quel équipement dois-je prévoir ?",
-			"answer": "Pour le 12km et le 24km, une lampe frontale est obligatoire. Si vous le souhaitez, vous pouvez également prévoir un goblet réutilisable pour les ravitaillements."
-		},
-		{
-			"question": "Des ravitaillements sont-ils prévus ?",
-			"answer": "Oui, des ravitaillements sont prévus sur le parcours. Il sera placé à l'arrivée du 12km, et donc à mi-parcours du 24km."
-		}
-	],
-	"photos": [
-		{
-			"src": "https://example.com/photo1.jpg",
-			"alt": "Photo 1",
-			"width": 800,
-			"height": 600
-		},
-		{
-			"src": "https://example.com/photo2.jpg",
-			"alt": "Photo 2",
-			"width": 800,
-			"height": 600
-		},
-		{
-			"src": "https://example.com/photo3.jpg",
-			"alt": "Photo 3",
-			"width": 800,
-			"height": 600
-		}
-	],
-	"footer__email": "contact@tnt-lestouches.fr",
-	"footer__phone": "+33 6 40 13 18 02"
+  "meta__page_title": "Trail Nocturne Touchois",
+  "meta__page_description": "Le Trail Nocturne Touchois ou TNT se déroulera le 29 novembre 2025. Départ à 19h30 pour le 12km et 19h00 pour le 24km. Ouverture des inscriptions le 23 juin 2025 et clôture des inscriptions le 24 novembre 2025 ou lorsque les 600 inscriptions seront atteints.",
+  "inscription_link": "https://www.timepulse.fr/evenements/voir/3101/trail-nocturne-touchois-les-touches",
+  "header__result_link": "https://www.timepulse.fr/evenements/voir/3101/trail-nocturne-touchois-les-touches",
+  "header__text": "Venez défier les sentiers touchois de nuit ce 29 novembre 2025 ! Une course nature de 12km ou 24km dans une ambiance unique, avec 600 participants attendus. Ouverture des inscriptions le 23 juin 2025.",
+  "header__video_link": "https://youtu.be/-3kyp5AVwKI?si=ONJTWOM54NNZ4IZ2",
+  "countdown__date": "Nov 29, 2025 19:00:00",
+  "circuit__date": "samedi 29 novembre 2025",
+  "circuit__elevation": "+53m/-60m",
+  "circuit__reglement_link": "https://docs.google.com/document/d/1gNO_uHs30NKa0O23FBHI40JncWagwWia",
+  "circuit__participant_count": "600 participants attendus",
+  "inscription__start_date-12km": "Départ 19h30",
+  "inscription__start_date-24km": "Départ 19h00",
+  "faq": [
+    {
+      "question": "Où et quand puis-je récupérer mon dossard ?",
+      "answer": "Les dossards seront remis aux coureurs (avec une pièce d’identité) le mercredi 26 novembre 2025 de 17h à 20h chez notre partenaire V&B les Touches et le vendredi 28 novembre 2025 à partir de 17h chez SPORT 2000. Le samedi 29 novembre 2025 à partir de 17h00."
+    },
+    {
+      "question": "Où et quand a lieu le départ de la course ?",
+      "answer": "Le départ de la course se fera le samedi 29 novembre 2025 à 19h30 pour le 12km et à 19h00 pour le 24km."
+    },
+    {
+      "question": "Est-il obligatoire de fournir un certificat médical ?",
+      "answer": "Les coureurs non licenciés devront joindre impérativement au bulletin d’inscription l’original du certificat médical de non-contre-indication à la pratique de la course à pied en compétition, datant de moins d’un an à la date de l’épreuve ou la photocopie de ce document certifié conforme par l’intéressé ou un PPS (Parcours de Prévention Santé). Les coureurs licenciés FFA, FFTRI, Courses hors stade ou Athlétisme devront obligatoirement joindre une copie de leur licence valide à la date de l’épreuve, lors de leur inscription."
+    },
+    {
+      "question": "Quel équipement dois-je prévoir ?",
+      "answer": "Pour le 12km et le 24km, une lampe frontale est obligatoire. Si vous le souhaitez, vous pouvez également prévoir un goblet réutilisable pour les ravitaillements."
+    },
+    {
+      "question": "Des ravitaillements sont-ils prévus ?",
+      "answer": "Oui, des ravitaillements sont prévus, en boissons et en solides. Pour le 12 km, il sera à l'arrivée; pour le 24, à mi-parcours ainsi qu'à l'arrivée."
+    }
+  ],
+  "footer__email": "contact@tnt-lestouches.fr",
+  "footer__phone": "+33 6 40 13 18 02"
 }
