@@ -6,23 +6,23 @@ import content from "../data/content.json";
 import AnchorButton from "./AnchorButton.astro";
 ---
 
-<header class="py-12 relative text-white @container">
+<header class="py-12 relative text-white">
   <div class="px-6 max-w-screen-xl mx-auto">
     <nav class="uppercase justify-between items-center flex">
-      <LogoIcon class="hidden @lg:block" />
-      <ul class="flex gap-6 font-medium text-base @xl:gap-12 flex-wrap">
+      <LogoIcon class="hidden lg:block" />
+      <ul class="flex gap-6 font-medium text-base xl:gap-12 flex-wrap">
         <li><a href={content.inscription_link}>Participer</a></li>
         <li><a href="#photos">Photos</a></li>
         <li><a href={content.header__result_link}>Résultats</a></li>
       </ul>
     </nav>
-    <div class="flex flex-col my-24 gap-12 text-left @lg:text-center">
+    <div class="flex flex-col my-24 gap-12 text-left lg:text-center">
       <h1 class="font-bold text-5xl md:text-7xl">
-        Trail <br class="block @lg:hidden" />Nocturne<br />Touchois
+        Trail <br class="block lg:hidden" />Nocturne<br />Touchois
       </h1>
       <p class="font-normal max-w-screen-md mx-auto">{content.header__text}</p>
       <div
-        class="flex flex-col gap-3 @lg:flex-row @lg:justify-center @lg:gap-6 @lg:items-center"
+        class="flex flex-col gap-3 lg:flex-row lg:justify-center lg:gap-6 lg:items-center"
       >
         <AnchorButton
           class="bg-white text-black text-center hover:bg-neutral-100 transition-colors duration-300 ease-in-out"
