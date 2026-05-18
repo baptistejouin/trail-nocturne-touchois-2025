@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@source './src/**/*.{astro}';
+@source "./src/**/*.{astro}";
 
 @theme {
   --font-sans: "Syne", "sans-serif";
